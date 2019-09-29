@@ -1,0 +1,94 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><title>Performance</title><link href="css/styles.css" rel="stylesheet"><link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png"><link rel="shortcut icon" href="images/favicon.ico"><script data-main="js/presentation" src="js/requirejs/require.js"></script></head><body><form class="go-to-page" action="/select/slide" method="post"><fieldset><input type="text" maxlength="3" value="" placeholder="1"></fieldset></form><section class="progress"><div class="value"></div></section><section class="dark" id="slides"><article class="illustration illustration--title center"><div class="wrapper"><h1>Performance</h1></div></article><article class="center text-title size-1"><div class="wrapper"><h1>Problem</h1></div><div class="subtitle"><p>— What problem are we solving?</p></div></article><article class="illustration illustration--degradation"><h1>DegradationDegradation</h1><div class="subtitle"><p>— A project with the best performance ever will loose its performance with each new feature.</p></div></article><article class="center text-title size-2"><div class="wrapper"><h1>Goal</h1></div></article><article class="center illustration illustration--prevent"><div class="wrapper"><h1>Prevent</h1></div><div class="subtitle"><p>— We need to prevent this kind of degradation!</p></div></article><article class="center illustration illustration--prevent"><div class="wrapper"><h1>Measure</h1></div><div class="subtitle"><p>— Best way to do it: measure performance on a regular basis.</p></div></article><article class="center types"><div class="wrapper"><h1>Measurements types</h1><div class="half"><img src="images/glass2.png" alt="lab"></div><div class="half"><img src="images/rum.jpg" alt="lab"></div></div><div class="subtitle"><p>— There are two types of measurements: laboratory and real user measurements.</p></div></article><article class="illustration illustration--rumrum"></article><article class="center text-title"><div class="wrapper"><h1>Server<br>Timing</h1></div></article><article class="center code-7"><div class="wrapper"><pre><code class="javascript">node --inspect ./server.js
+</code></pre></div></article><article class="illustration illustration--if"></article><article class="center code-9"><div class="wrapper"><pre><code class="http">Server-Timing:
+    cache;
+    desc="Cache Read";
+    dur=23.2
+</code></pre></div></article><article class="center code-9"><div class="wrapper"><pre><code class="javascript">Server-Timing: cache
+
+</code></pre></div></article><article class="screen screen--server-timing-caniuse"></article><article class="screen screen--blink-edge"></article><article class="center code-10"><div class="wrapper"><pre><code class="javascript">Chrome v60-64
+</code></pre></div></article><article class="center code-10"><div class="wrapper"><pre><code class="javascript">Server-Timing:
+    cache=23.2;
+    "Cache Read"
+</code></pre></div></article><article class="screen screen--server-timing-screen"></article><article class="screen screen--server-timing-screen-safari"></article><article class="center code-0"><div class="wrapper"><pre><code class="javascript">const express = require('express');
+const app = express();
+app.get('/', (req, res) => {
+    //…
+    res.send(200).end();
+});
+app.listen(3000);
+</code></pre></div></article><article class="center code-7"><div class="wrapper"><pre><code class="javascript">res.set(
+    'Server-Timing',
+    'cache;
+     desc="Cache Read";
+     dur=23.2');
+</code></pre></div></article><article class="center code-8"><div class="wrapper"><pre><code class="javascript">// node.js v0.7.6
+process.hrtime();
+// integer[]
+// [ seconds, nanoseconds ]
+// [ 8063, 904046009 ]
+</code></pre></div></article><article class="center code-0"><div class="wrapper"><pre><code>const from = process.hrtime();
+const duration = process.hrtime(from);
+</code></pre></div></article><article class="center code-6"><div class="wrapper"><pre><code class="javascript">// To milliseconds
+const ms = parseInt(
+            duration[0] * 1e3 +
+            duration[1] * 1e-6,
+           10);
+</code></pre></div></article><article class="center code-0"><div class="wrapper"><pre><code class="javascript">// node.js v10.7.0, Stage 3
+const from = process.hrtime.bigint();
+const to = process.hrtime.bigint();
+const duration = to - from;
+</code></pre></div></article><article class="center code-6"><div class="wrapper"><pre><code class="javascript">// To milliseconds
+const ms = duration / 1000000n;
+</code></pre></div></article><article class="screen screen--bigint overlay"><div class="overlay__abstract overlay__abstract--right"><h5 class="overlay__title">BigInt</h5><img class="overlay__qr" src="images/bigint.svg" alt="QRCODE cо ссылкой"><p><a class="overlay__link" href="https://tc39.github.io/proposal-bigint/" data-click>https://tc39.github.io/proposal-bigint/</a></p></div></article><article class="screen screen--npm-server-timing overlay"><div class="overlay__abstract overlay__abstract--right"><h5 class="overlay__title">Server Timing npm package</h5><img class="overlay__qr" src="images/npm-server-timing.svg" alt="QRCODE cо ссылкой"><p><a class="overlay__link" href="https://www.npmjs.com/package/server-timing-header" data-click>https://www.npmjs.com/package/server-timing-header</a></p></div></article><article class="center code-7"><div class="wrapper"><pre><code class="bash">npm i -S server-timing-header
+</code></pre></div></article><article class="center code-6"><div class="wrapper"><pre><code class="javascript">const express = require('express');
+const app = express();
+app.get('/', (req, res) => {
+    //…
+    res.send(200).end();
+});
+app.listen(3000);
+</code></pre></div></article><article class="center code-0"><div class="wrapper"><pre><code class="diff">+ const serverTiming =
++    require('server-timing-header');
+  const express = require('express');
+  const app = express();
++ app.use(serverTiming());
+  app.get('/', (req, res) => {
+      //…
+</code></pre></div></article><article class="center code-7"><div class="wrapper"><pre><code class="javascript">req.serverTiming.from('db');
+// fetching data from database
+req.serverTiming.to('db');
+</code></pre></div></article><article class="center code-6"><div class="wrapper"><pre><code class="javascript">req.serverTiming.add(
+    'cache', // name
+    'Cache Read', //description
+    23.2 // value
+);
+</code></pre></div></article><article class="center code-7"><div class="wrapper"><pre><code class="javascript">req.serverTiming.add(
+    'cache',
+    'Element not in cache',
+);
+</code></pre></div></article><article class="center code-1"><div class="wrapper"><pre><code class="javascript">// not safari
+// ff need https
+performance.getEntriesByType('navigation');
+performance.getEntriesByType('resource');
+</code></pre></div></article><article class="screen screen--client-server-timing"></article><article class="center code-9"><div class="wrapper"><pre><code class="javascript">Timing-Allow-Origin: *
+</code></pre></div></article><article class="center code-1"><div class="wrapper"><pre><code class="javascript">import { ApolloLink } from 'apollo-link';
+import uuidv4 from 'uuid/v4';
+
+const serverTimingLink = request =>
+    new ApolloLink((operation, forward) => {
+        /* … */
+    });
+
+export default serverTimingLink;
+</code></pre></div></article><article class="center code-2"><div class="wrapper"><pre><code class="js">const id = uuidv4();
+if (request) request.serverTiming.from(
+        `${operation.operationName}-${id}`,
+        operation.operationName
+    );
+return forward(operation).map(data => {
+    if (request) request.serverTiming.to(
+            `${operation.operationName}-${id}`
+        );
+    return data;
+});
+</code></pre></div></article><article class="screen screen--server-timing-use"></article><article class="screen screen--server-timing overlay"><div class="overlay__abstract overlay__abstract--right"><h5 class="overlay__title">Server Timing</h5><img class="overlay__qr" src="images/server-timing.svg" alt="QRCODE cо ссылкой"><p><a class="overlay__link" href="https://www.w3.org/TR/2019/WD-server-timing-20190307/" data-click>https://www.w3.org/TR/2019/WD-server-timing-20190307/</a></p></div></article><article class="screen screen--w3c overlay"><div class="overlay__abstract overlay__abstract--right"><h5 class="overlay__title">World Wide Web Consortium</h5><img class="overlay__qr" src="images/w3c.svg" alt="QRCODE cо ссылкой"><p><a class="overlay__link" href="https://github.com/w3c/" data-click>https://github.com/w3c/</a></p></div></article><article class="screen screen--wicg overlay"><div class="overlay__abstract overlay__abstract--right"><h5 class="overlay__title">Web Incubator CG</h5><img class="overlay__qr" src="images/wicg.svg" alt="QRCODE cо ссылкой"><p><a class="overlay__link" href="https://github.com/WICG/" data-click>https://github.com/WICG/</a></p></div></article><article class="contacts center qrcode"><div class="wrapper"><div class="about-speaker half"><p class="name">Anton Nemtsev</p><img class="logo" src="images/logo.svg" alt="Werkspot"><p class="link">http://silentimp.info/</p><p class="twitter">@silentimp</p><p class="email">thesilentimp@gmail.com</p><p class="skype">skype: ravencry</p></div><div class="half"><img src="images/git.svg" alt="QRCODE cо ссылкой на доклад"></div><p><a href="https://github.com/SilentImp/ServerTimingHeader" data-click>https://bit.ly/2opk057</a></p></div></article></section></body></html>
