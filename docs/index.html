@@ -9,7 +9,7 @@
 </code></pre></div></article><article class="center code-10"><div class="wrapper"><pre><code class="javascript">Server-Timing:
     cache=23.2;
     "Cache Read"
-</code></pre></div></article><article class="screen screen--server-timing-screen"></article><article class="screen screen--server-timing-screen-safari"></article><article class="center code-0"><div class="wrapper"><pre><code class="javascript">const express = require('express');
+</code></pre></div></article><article class="screen screen--server-timing-screen"></article><article class="screen screen--server-timing-screen-safari"></article><article class="screen screen--server-timing-screen-email"></article><article class="screen screen--server-timing-screen-ff"></article><article class="center code-0"><div class="wrapper"><pre><code class="javascript">const express = require('express');
 const app = express();
 app.get('/', (req, res) => {
     //…
@@ -91,4 +91,37 @@ return forward(operation).map(data => {
         );
     return data;
 });
-</code></pre></div></article><article class="screen screen--server-timing-use"></article><article class="screen screen--server-timing overlay"><div class="overlay__abstract overlay__abstract--right"><h5 class="overlay__title">Server Timing</h5><img class="overlay__qr" src="images/server-timing.svg" alt="QRCODE cо ссылкой"><p><a class="overlay__link" href="https://www.w3.org/TR/2019/WD-server-timing-20190307/" data-click>https://www.w3.org/TR/2019/WD-server-timing-20190307/</a></p></div></article><article class="screen screen--w3c overlay"><div class="overlay__abstract overlay__abstract--right"><h5 class="overlay__title">World Wide Web Consortium</h5><img class="overlay__qr" src="images/w3c.svg" alt="QRCODE cо ссылкой"><p><a class="overlay__link" href="https://github.com/w3c/" data-click>https://github.com/w3c/</a></p></div></article><article class="screen screen--wicg overlay"><div class="overlay__abstract overlay__abstract--right"><h5 class="overlay__title">Web Incubator CG</h5><img class="overlay__qr" src="images/wicg.svg" alt="QRCODE cо ссылкой"><p><a class="overlay__link" href="https://github.com/WICG/" data-click>https://github.com/WICG/</a></p></div></article><article class="contacts center qrcode"><div class="wrapper"><div class="about-speaker half"><p class="name">Anton Nemtsev</p><img class="logo" src="images/logo.svg" alt="Werkspot"><p class="link">http://silentimp.info/</p><p class="twitter">@silentimp</p><p class="email">thesilentimp@gmail.com</p><p class="skype">skype: ravencry</p></div><div class="half"><img src="images/git.svg" alt="QRCODE cо ссылкой на доклад"></div><p><a href="https://github.com/SilentImp/ServerTimingHeader" data-click>https://bit.ly/2opk057</a></p></div></article></section></body></html>
+</code></pre></div></article><article class="screen screen--server-timing-use"></article><article class="screen screen--server-timing overlay"><div class="overlay__abstract overlay__abstract--right"><h5 class="overlay__title">Server Timing</h5><img class="overlay__qr" src="images/server-timing.svg" alt="QRCODE cо ссылкой"><p><a class="overlay__link" href="https://www.w3.org/TR/2019/WD-server-timing-20190307/" data-click>https://www.w3.org/TR/2019/WD-server-timing-20190307/</a></p></div></article><article class="center trailer-title"><div class="wrapper"><h1>Trailer<br>Header</h1></div></article><article class="screen screen--ttfb-data"></article><article class="center code-0"><div class="wrapper"><pre><code class="javascript">const {
+    renderToNodeStream
+    } = require("react-dom/server");
+const React = require("react");
+const express = require('express');
+const app = express();
+app.get('/', (req, res) => {/*…*/});
+app.listen(3000);
+</code></pre></div></article><article class="center code-6"><div class="wrapper"><pre><code class="javascript">res.writeHead(200, {
+    'Content-Type': 'text/html',
+    'Transfer-Encoding': 'chunked'
+});
+res.write("&lt;main id='content'>");
+</code></pre></div></article><article class="center code-1"><div class="wrapper"><pre><code class="javascript">const stream = renderToNodeStream(
+    React.createElement('p', null, 'XXX')
+);
+stream.pipe(res, { end: false });
+stream.on('end', () => {
+    res.write("&lt;/main>").end();
+});
+</code></pre></div></article><article class="center code-10"><div class="wrapper"><pre><code class="javascript">Server-Timing?
+</code></pre></div></article><article class="center code-6"><div class="wrapper"><pre><code class="javascript">res.writeHead(200, {
+    'Trailer': 'Server-Timing',
+    // …
+});
+</code></pre></div></article><article class="center code-0"><div class="wrapper"><pre><code class="javascript">stream.on('end', () => {
+    res.write("&lt;/main>")
+    res.addTrailers({
+        'Server-Timing':
+        'metric;desc="metric 2";dur=12'
+    });
+    res.end();
+});
+</code></pre></div></article><article class="screen screen--trail"></article><article class="screen screen--trailer overlay"><div class="overlay__abstract overlay__abstract--right"><h5 class="overlay__title">Trailer</h5><img class="overlay__qr" src="images/trailer.svg" alt="QRCODE cо ссылкой"><p><a class="overlay__link" href="https://tools.ietf.org/html/rfc7230#section-4.4" data-click>https://tools.ietf.org/html/rfc7230</a></p></div></article><article class="screen screen--w3c overlay"><div class="overlay__abstract overlay__abstract--right"><h5 class="overlay__title">World Wide Web Consortium</h5><img class="overlay__qr" src="images/w3c.svg" alt="QRCODE cо ссылкой"><p><a class="overlay__link" href="https://github.com/w3c/" data-click>https://github.com/w3c/</a></p></div></article><article class="screen screen--wicg overlay"><div class="overlay__abstract overlay__abstract--right"><h5 class="overlay__title">Web Incubator CG</h5><img class="overlay__qr" src="images/wicg.svg" alt="QRCODE cо ссылкой"><p><a class="overlay__link" href="https://github.com/WICG/" data-click>https://github.com/WICG/</a></p></div></article><article class="contacts center qrcode"><div class="wrapper"><div class="about-speaker half"><p class="name">Anton Nemtsev</p><img class="logo" src="images/logo.svg" alt="Werkspot"><p class="link">http://silentimp.info/</p><p class="twitter">@silentimp</p><p class="email">thesilentimp@gmail.com</p><p class="skype">skype: ravencry</p></div><div class="half"><img src="images/git.svg" alt="QRCODE cо ссылкой на доклад"></div><p><a href="https://github.com/SilentImp/ServerTimingHeader" data-click>https://bit.ly/2opk057</a></p></div></article></section></body></html>

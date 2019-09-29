@@ -1640,6 +1640,12 @@ body img.logo.logo.logo.logo {
 .screen--server-timing-screen-safari {
   background-image: url("../images/server-timing-screen-safari.png");
 }
+.screen--server-timing-screen-ff {
+  background-image: url("../images/ff.png");
+}
+.screen--server-timing-screen-email {
+  background-image: url("../images/email.png");
+}
 .screen--bigint {
   background-image: url("../images/bigint.png");
 }

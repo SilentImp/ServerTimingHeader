@@ -954,6 +954,10 @@ block slides
 
     article.screen.screen--server-timing-screen-safari
 
+    article.screen.screen--server-timing-screen-email
+
+    article.screen.screen--server-timing-screen-ff
+
     article.center.code-0
         .wrapper
             pre
@@ -1157,85 +1161,85 @@ block slides
                 a.overlay__link(href="https://www.w3.org/TR/2019/WD-server-timing-20190307/", data-click=true) https://www.w3.org/TR/2019/WD-server-timing-20190307/
 
 
-    //- article.center.trailer-title
-    //-     .wrapper
-    //-         h1 Trailer
-    //-             br
-    //-             | Header
+    article.center.trailer-title
+        .wrapper
+            h1 Trailer
+                br
+                | Header
 
-    //- article.screen.screen--ttfb-data
+    article.screen.screen--ttfb-data
 
-    //- article.center.code-0
-    //-     .wrapper
-    //-         pre
-    //-             code.javascript.
-    //-                 const {
-    //-                     renderToNodeStream
-    //-                     } = require("react-dom/server");
-    //-                 const React = require("react");
-    //-                 const express = require('express');
-    //-                 const app = express();
-    //-                 app.get('/', (req, res) => {/*…*/});
-    //-                 app.listen(3000);
+    article.center.code-0
+        .wrapper
+            pre
+                code.javascript.
+                    const {
+                        renderToNodeStream
+                        } = require("react-dom/server");
+                    const React = require("react");
+                    const express = require('express');
+                    const app = express();
+                    app.get('/', (req, res) => {/*…*/});
+                    app.listen(3000);
 
-    //- article.center.code-6
-    //-     .wrapper
-    //-         pre
-    //-             code.javascript.
-    //-                 res.writeHead(200, {
-    //-                     'Content-Type': 'text/html',
-    //-                     'Transfer-Encoding': 'chunked'
-    //-                 });
-    //-                 res.write("&lt;main id='content'>");
+    article.center.code-6
+        .wrapper
+            pre
+                code.javascript.
+                    res.writeHead(200, {
+                        'Content-Type': 'text/html',
+                        'Transfer-Encoding': 'chunked'
+                    });
+                    res.write("&lt;main id='content'>");
 
-    //- article.center.code-1
-    //-     .wrapper
-    //-         pre
-    //-             code.javascript.
-    //-                 const stream = renderToNodeStream(
-    //-                     React.createElement('p', null, 'XXX')
-    //-                 );
-    //-                 stream.pipe(res, { end: false });
-    //-                 stream.on('end', () => {
-    //-                     res.write("&lt;/main>").end();
-    //-                 });
+    article.center.code-1
+        .wrapper
+            pre
+                code.javascript.
+                    const stream = renderToNodeStream(
+                        React.createElement('p', null, 'XXX')
+                    );
+                    stream.pipe(res, { end: false });
+                    stream.on('end', () => {
+                        res.write("&lt;/main>").end();
+                    });
 
-    //- article.center.code-10
-    //-     .wrapper
-    //-         pre
-    //-             code.javascript.
-    //-                 Server-Timing?
+    article.center.code-10
+        .wrapper
+            pre
+                code.javascript.
+                    Server-Timing?
 
-    //- article.center.code-6
-    //-     .wrapper
-    //-         pre
-    //-             code.javascript.
-    //-                 res.writeHead(200, {
-    //-                     'Trailer': 'Server-Timing',
-    //-                     // …
-    //-                 });
+    article.center.code-6
+        .wrapper
+            pre
+                code.javascript.
+                    res.writeHead(200, {
+                        'Trailer': 'Server-Timing',
+                        // …
+                    });
 
-    //- article.center.code-0
-    //-     .wrapper
-    //-         pre
-    //-             code.javascript.
-    //-                 stream.on('end', () => {
-    //-                     res.write("&lt;/main>")
-    //-                     res.addTrailers({
-    //-                         'Server-Timing':
-    //-                         'metric;desc="metric 2";dur=12'
-    //-                     });
-    //-                     res.end();
-    //-                 });
+    article.center.code-0
+        .wrapper
+            pre
+                code.javascript.
+                    stream.on('end', () => {
+                        res.write("&lt;/main>")
+                        res.addTrailers({
+                            'Server-Timing':
+                            'metric;desc="metric 2";dur=12'
+                        });
+                        res.end();
+                    });
 
-    //- article.screen.screen--trail
+    article.screen.screen--trail
 
-    //- article.screen.screen--trailer.overlay
-    //-     .overlay__abstract.overlay__abstract--right
-    //-         h5.overlay__title Trailer
-    //-         img.overlay__qr(src="images/trailer.svg", alt="QRCODE cо ссылкой")
-    //-         p
-    //-             a.overlay__link(href="https://tools.ietf.org/html/rfc7230#section-4.4", data-click=true) https://tools.ietf.org/html/rfc7230
+    article.screen.screen--trailer.overlay
+        .overlay__abstract.overlay__abstract--right
+            h5.overlay__title Trailer
+            img.overlay__qr(src="images/trailer.svg", alt="QRCODE cо ссылкой")
+            p
+                a.overlay__link(href="https://tools.ietf.org/html/rfc7230#section-4.4", data-click=true) https://tools.ietf.org/html/rfc7230
 
     //- article.center.hint-title
     //-     .wrapper
