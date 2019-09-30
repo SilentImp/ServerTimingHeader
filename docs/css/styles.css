@@ -1118,7 +1118,7 @@ html body section#slides article iframe.half:last-child {
   position: relative;
   left: -55px;
   padding-top: 15px;
-  background: linear-gradient(535deg, #77a1d3 15%, #79cbca 46%, #e684ae 100%);
+  background: linear-gradient(735deg, #5433ff 15%, #20bdff 46%, #a5fecb 100%);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -1151,6 +1151,122 @@ html body section#slides article iframe.half:last-child {
   text-align: center;
   left: -50px;
   top: -20px;
+}
+.text-title-1 h1 {
+  width: 1200px;
+  font-size: 430px;
+  line-height: 380px;
+  font-family: 'Bebas';
+  text-align: right;
+  letter-spacing: -15px;
+  position: relative;
+  left: 0;
+  padding-top: 0;
+  background: linear-gradient(55deg, #c21500 25%, #ffc500 100%);
+  -webkit-animation: hue 10s infinite linear both;
+          animation: hue 10s infinite linear both;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.text-title-2 h1 {
+  width: 1200px;
+  font-size: 500px;
+  line-height: 380px;
+  font-family: 'Bebas';
+  text-align: right;
+  letter-spacing: 0;
+  position: relative;
+  left: 40px;
+  padding-top: 15px;
+  background: linear-gradient(55deg, #c21500 25%, #ffc500 100%);
+  -webkit-animation: hue 10s infinite linear both;
+          animation: hue 10s infinite linear both;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.text-title-3 h1 {
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  width: 1200px;
+  font-size: 400px;
+  line-height: 320px;
+  font-family: 'Bebas';
+  text-align: left;
+  letter-spacing: 0px;
+  position: relative;
+  left: -20px;
+  padding-top: 15px;
+  background: linear-gradient(23deg, #c6ffdd 25%, #fbd786 50%, #f7797d 100%);
+  -webkit-animation: hue 10s infinite linear both;
+          animation: hue 10s infinite linear both;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transform: rotate(-90deg) translateY(10px) translateX(-700px);
+          transform: rotate(-90deg) translateY(10px) translateX(-700px);
+}
+.text-title-5 h1 {
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  width: 1200px;
+  font-size: 400px;
+  line-height: 320px;
+  font-family: 'Bebas';
+  text-align: left;
+  letter-spacing: 0px;
+  position: relative;
+  left: -20px;
+  padding-top: 15px;
+  background: linear-gradient(23deg, #c6ffdd 25%, #fbd786 50%, #f7797d 100%);
+  -webkit-animation: hue 10s infinite linear both;
+          animation: hue 10s infinite linear both;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-transform-origin: 0 50%;
+          transform-origin: 0 50%;
+  -webkit-transform: rotate(90deg) translateY(-580px) translateX(-680px);
+          transform: rotate(90deg) translateY(-580px) translateX(-680px);
+}
+.text-title-4 h1 {
+  width: 1200px;
+  font-size: 500px;
+  line-height: 380px;
+  font-family: 'Bebas';
+  text-align: left;
+  letter-spacing: 0;
+  position: relative;
+  left: -40px;
+  padding-top: 15px;
+  background: linear-gradient(23deg, #c6ffdd 25%, #fbd786 50%, #f7797d 100%);
+  -webkit-animation: hue 10s infinite linear both;
+          animation: hue 10s infinite linear both;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.text-title-6 h1 {
+  width: 1200px;
+  font-size: 480px;
+  line-height: 380px;
+  font-family: 'Bebas';
+  text-align: left;
+  letter-spacing: 0;
+  position: relative;
+  left: -40px;
+  padding-top: 15px;
+  background: linear-gradient(23deg, #c6ffdd 25%, #fbd786 50%, #f7797d 100%);
+  -webkit-animation: hue 10s infinite linear both;
+          animation: hue 10s infinite linear both;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 .hires-time h1 {
   font-size: 480px;
@@ -1637,6 +1753,9 @@ body img.logo.logo.logo.logo {
 .screen--measure-2 {
   background-image: url("../images/measure-2.png");
 }
+.screen--server-timing-screen-opera {
+  background-image: url("../images/opera.png");
+}
 .screen--server-timing-screen-safari {
   background-image: url("../images/server-timing-screen-safari.png");
 }
@@ -1654,6 +1773,9 @@ body img.logo.logo.logo.logo {
 }
 .screen--client-server-timing {
   background-image: url("../images/client-server-timing.png");
+}
+.screen--client-server-timing-table {
+  background-image: url("../images/table.png");
 }
 .screen--server-timing-caniuse {
   background-image: url("../images/server-timing-caniuse.png");

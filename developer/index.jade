@@ -900,21 +900,11 @@ block slides
                 br
                 | Timing
 
-    article.center.code-7
+    article.center.text-title-2
         .wrapper
-            pre
-                code.javascript.
-                    node --inspect ./server.js
-
-    article.illustration.illustration--if
-
-    //- article.center.code-10
-    //-     .wrapper
-    //-         pre
-    //-             code.
-    //-                 Chrome v65
-    //-                 FF
-    //-                 Safari
+            h1 What
+                br
+                | is it?
 
     article.center.code-9
         .wrapper
@@ -928,9 +918,37 @@ block slides
     article.center.code-9
         .wrapper
             pre
-                code.javascript.
+                code.http.
                     Server-Timing: cache
 
+    article.center.text-title-3
+        .wrapper
+            h1 What does it do?
+
+    article.screen.screen--server-timing-screen
+
+    article.screen.screen--server-timing-screen-opera
+
+    article.screen.screen--server-timing-screen-safari
+
+    article.screen.screen--server-timing-screen-ff
+
+    article.screen.screen--server-timing-screen-email
+
+    article.center.code-1
+        .wrapper
+            pre
+                code.javascript.
+                    performance.getEntriesByType('navigation');
+                    performance.getEntriesByType('resource');
+
+    article.screen.screen--client-server-timing
+
+    article.screen.screen--client-server-timing-table
+
+    article.center.text-title-4
+        .wrapper
+            h1 Can I use it?
 
     article.screen.screen--server-timing-caniuse
 
@@ -950,13 +968,39 @@ block slides
                         cache=23.2;
                         "Cache Read"
 
-    article.screen.screen--server-timing-screen
+    article.center.code-9
+        .wrapper
+            pre
+                code.javascript.
+                    HTTPS
+                    Timing-Allow-Origin: *
 
-    article.screen.screen--server-timing-screen-safari
+    article.center.text-title-5
+        .wrapper
+            h1 Why do we need
+                br
+                | it?
 
-    article.screen.screen--server-timing-screen-email
+    article.center.code-7
+        .wrapper
+            pre
+                code.javascript.
+                    node --inspect ./server.js
 
-    article.screen.screen--server-timing-screen-ff
+    article.illustration.illustration--if
+
+    article.center.text-title-4
+        .wrapper
+            h1 How to use it?
+
+
+    //- article.center.code-10
+    //-     .wrapper
+    //-         pre
+    //-             code.
+    //-                 Chrome v65
+    //-                 FF
+    //-                 Safari
 
     article.center.code-0
         .wrapper
@@ -979,6 +1023,12 @@ block slides
                         'cache;
                          desc="Cache Read";
                          dur=23.2');
+
+    article.screen.screen--server-timing-screen
+
+    article.center.text-title-1
+        .wrapper
+            h1 How to measure?
 
     article.center.code-8
         .wrapper
@@ -1029,6 +1079,10 @@ block slides
             img.overlay__qr(src="images/bigint.svg", alt="QRCODE cо ссылкой")
             p
                 a.overlay__link(href="https://tc39.github.io/proposal-bigint/", data-click=true) https://tc39.github.io/proposal-bigint/
+
+    article.center.text-title-6
+        .wrapper
+            h1 Need tooling!
 
     article.screen.screen--npm-server-timing.overlay
         .overlay__abstract.overlay__abstract--right
@@ -1094,22 +1148,22 @@ block slides
                         'Element not in cache',
                     );
 
-    article.center.code-1
-        .wrapper
-            pre
-                code.javascript.
-                    // not safari
-                    // ff need https
-                    performance.getEntriesByType('navigation');
-                    performance.getEntriesByType('resource');
+    article.screen.screen--server-timing-screen
 
-    article.screen.screen--client-server-timing
+    //- article.center.code-1
+    //-     .wrapper
+    //-         pre
+    //-             code.javascript.
+    //-                 // not safari
+    //-                 // ff need https
+    //-                 performance.getEntriesByType('navigation');
+    //-                 performance.getEntriesByType('resource');
 
-    article.center.code-9
+    //- article.screen.screen--client-server-timing
+
+    article.center.text-title-2
         .wrapper
-            pre
-                code.javascript.
-                    Timing-Allow-Origin: *
+            h1 Tell me more!
 
     article.center.code-1
         .wrapper
