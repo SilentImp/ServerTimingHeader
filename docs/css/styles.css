@@ -959,6 +959,11 @@ html body section#slides article iframe.half:last-child {
   }
 }
 
+.list ul,
+.list li {
+  font-size: 72px;
+  line-height: 1.4;
+}
 .contacts img:not(.logo) {
   -webkit-transform: translateX(-40px);
           transform: translateX(-40px);
