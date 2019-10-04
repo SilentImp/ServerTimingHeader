@@ -190,13 +190,9 @@ block slides
                     const from = process.hrtime.bigint();
                     const to = process.hrtime.bigint();
                     const duration = to - from;
-
-    article.center.code-6
-        .wrapper
-            pre
-                code.javascript.
                     // To milliseconds
                     const ms = duration / 1000000n;
+
 
     article.screen.screen--bigint.overlay
         .overlay__abstract.overlay__abstract--right

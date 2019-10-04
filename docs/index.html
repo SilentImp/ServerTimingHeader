@@ -40,8 +40,9 @@ const ms = parseInt(
 const from = process.hrtime.bigint();
 const to = process.hrtime.bigint();
 const duration = to - from;
-</code></pre></div></article><article class="center code-6"><div class="wrapper"><pre><code class="javascript">// To milliseconds
+// To milliseconds
 const ms = duration / 1000000n;
+
 </code></pre></div></article><article class="screen screen--bigint overlay"><div class="overlay__abstract overlay__abstract--right"><h5 class="overlay__title">BigInt</h5><img class="overlay__qr" src="images/bigint.svg" alt="QRCODE cо ссылкой"><p><a class="overlay__link" href="https://tc39.github.io/proposal-bigint/" data-click>https://tc39.github.io/proposal-bigint/</a></p></div></article><article class="center text-title-6"><div class="wrapper"><h1>Need tooling!</h1></div></article><article class="screen screen--npm-server-timing overlay"><div class="overlay__abstract overlay__abstract--right"><h5 class="overlay__title">Server Timing npm package</h5><img class="overlay__qr" src="images/npm-server-timing.svg" alt="QRCODE cо ссылкой"><p><a class="overlay__link" href="https://www.npmjs.com/package/server-timing-header" data-click>https://www.npmjs.com/package/server-timing-header</a></p></div></article><article class="center code-7"><div class="wrapper"><pre><code class="bash">npm i -S server-timing-header
 </code></pre></div></article><article class="center code-6"><div class="wrapper"><pre><code class="javascript">const express = require('express');
 const app = express();
